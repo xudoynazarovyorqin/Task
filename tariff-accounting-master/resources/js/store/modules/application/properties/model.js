@@ -1,0 +1,17 @@
+export const model = {
+    id: undefined,
+    number: '',
+    datetime: '',
+    client: '',
+    contract_client: '',
+    status: '',
+    console_number: '',
+    amount: 0,
+    object_name: '',
+    district_id: '',
+    quarter_id: '',
+    object_street: '',
+    object_home: '',
+    object_corps: '',
+    object_flat: '',
+};

@@ -1,0 +1,21 @@
+export const model = {
+    id: null,
+    name: '',
+    full_name: '',
+    sku: '',
+    fax: '',
+    phone: '',
+    email: '',
+    comment: '',
+    actual_address: '',
+    type_id: '',
+    legal_address: '',
+    inn: '',
+    mfo: '',
+    okonx: '',
+    oked: '',
+    rkp_nds: '',
+    deleted_at: '',
+    created_at: '',
+    updated_at: ''
+};

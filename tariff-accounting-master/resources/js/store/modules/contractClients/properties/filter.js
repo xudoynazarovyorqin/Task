@@ -1,0 +1,16 @@
+export const filter = {
+    id: "",
+    search: "",
+    number: '',
+    client_id: '',
+    begin_date: '',
+    status_id: '',
+    conclusion_date: '',
+    termination_date: '',
+    sum: '',
+    paid: '',
+    comment: '',
+    created_at: '',
+    updated_at: '',
+    parent_id: '',
+};

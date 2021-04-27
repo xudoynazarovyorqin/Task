@@ -1,0 +1,17 @@
+export const model = {
+    id: null,
+    name: '',
+    first_name: '',
+    phone: '',
+    surname: '',
+    patronymic: '',
+    role: null,
+    email: '',
+    password: '',
+    pin_code: '',
+    verified: false,
+    locked: false,
+    status: 'active',
+    is_employee: '',
+    employee_groups: [],
+};

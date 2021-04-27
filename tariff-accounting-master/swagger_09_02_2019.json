@@ -1,0 +1,2667 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This GoodOne GOCRM system apis",
+    "version": "1.0.0",
+    "title": "Swagger Petstore"
+  },
+  "host": "dev.gocrm.uz",
+  "basePath": "/api",
+  "tags": [
+    {
+      "name": "Auth",
+      "description": "Everything about your Auth"
+    },
+    {
+      "name": "Users",
+      "description": "Everything about your Users"
+    },
+    {
+      "name": "Products",
+      "description": "Everything about your Products"
+    },
+    {
+      "name": "Measurements",
+      "description": "Everyting for Measurement"
+    },
+    {
+      "name": "Sales",
+      "description": "Everyting for Sales"
+    },
+    {
+      "name": "Priority",
+      "description": "Everyting for Priority"
+    },
+    {
+      "name": "Level",
+      "description": "Everyting for Level"
+    }
+  ],
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "paths": {
+    "/auth/login": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Login qilish uchun.",
+        "description": "Login qilish uchun. Telefon raqam va parol yuboriladi.",
+        "consumes": [
+          "application/json",
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json",
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Login"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "422": {
+            "description": "Validation errors",
+            "schema": {
+              "$ref": "#/definitions/ResponseErrorValidation"
+            }
+          }
+        }
+      }
+    },
+    "/auth/user": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "Get user.",
+        "consumes": [
+          "application/json",
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json",
+          "application/x-www-form-urlencoded"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      }
+    },
+    "/auth/logout": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "Logout user.",
+        "consumes": [
+          "application/json",
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json",
+          "application/x-www-form-urlencoded"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      }
+    },
+    "/auth/refresh": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "Refresh user token.",
+        "consumes": [
+          "application/json",
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json",
+          "application/x-www-form-urlencoded"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      }
+    },
+    "/users": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "Get all users",
+        "description": "Get all users",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "User store",
+        "description": "User store",
+        "consumes": [
+          "application/json",
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json",
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      }
+    },
+    "/users/{user_id}": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "User show",
+        "description": "User show",
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Users"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "User update",
+        "description": "User update",
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Users"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "User delete",
+        "description": "User delete",
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      }
+    },
+    "/products": {
+      "get": {
+        "tags": [
+          "Products"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "Get all products",
+        "description": "Get all products",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Products"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "Product store",
+        "description": "Product store",
+        "consumes": [
+          "application/json",
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json",
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Product"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      }
+    },
+    "/products/{product_id}": {
+      "get": {
+        "tags": [
+          "Products"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "Product show",
+        "description": "Product show",
+        "parameters": [
+          {
+            "name": "product_id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Products"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "Product update",
+        "description": "Product update",
+        "parameters": [
+          {
+            "name": "product_id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Products"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "Product delete",
+        "description": "Product delete",
+        "parameters": [
+          {
+            "name": "product_id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      }
+    },
+    "/products/materials/{id}/delete": {
+      "delete": {
+        "tags": [
+          "Products"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "Product material delete",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      }
+    },
+    "/measurements": {
+      "get": {
+        "tags": [
+          "Measurements"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "Get all measurements",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Measurements"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "Measurements store",
+        "description": "Measurements store",
+        "consumes": [
+          "application/json",
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json",
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Measurement"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      }
+    },
+    "/products/live/search": {
+      "post": {
+        "tags": [
+          "Products"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "Products search",
+        "description": "Products search",
+        "consumes": [
+          "application/json",
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json",
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "type": "string",
+            "name": "search"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      }
+    },
+    "/measurements/{measurement_id}": {
+      "get": {
+        "tags": [
+          "Measurements"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "Measurements show",
+        "description": "Measurements show",
+        "parameters": [
+          {
+            "name": "measurement_id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Measurements"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "Measurements update",
+        "description": "Measurements update",
+        "parameters": [
+          {
+            "name": "measurement_id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Measurement"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Measurements"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "Measurements delete",
+        "description": "Measurements delete",
+        "parameters": [
+          {
+            "name": "measurement_id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      }
+    },
+    "/sales": {
+      "get": {
+        "tags": [
+          "Sales"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "Sales get all",
+        "description": "Sales get all",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Sales"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "Sales store",
+        "description": "Sales store",
+        "consumes": [
+          "application/json",
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json",
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Sale"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      }
+    },
+    "/sales/{sale_id}": {
+      "get": {
+        "tags": [
+          "Sales"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "Sale show",
+        "description": "Sale show",
+        "parameters": [
+          {
+            "name": "sale_id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Sales"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "Sale update",
+        "description": "Sale update",
+        "parameters": [
+          {
+            "name": "sale_id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Measurement"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Sales"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "Sale delete",
+        "description": "Sale delete",
+        "parameters": [
+          {
+            "name": "sale_id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      }
+    },
+    "/sales/products/change/property": {
+      "post": {
+        "tags": [
+          "Sales"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "Sale show",
+        "description": "Sale show",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SaleProduct"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      }
+    },
+    "/states": {
+      "get": {
+        "tags": [
+          "States"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "states get all",
+        "description": "states get all",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "States"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "states store",
+        "description": "states store",
+        "consumes": [
+          "application/json",
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json",
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/State"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      }
+    },
+    "/states/{state_id}": {
+      "get": {
+        "tags": [
+          "States"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "state show",
+        "description": "state show",
+        "parameters": [
+          {
+            "name": "state_id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "States"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "state update",
+        "description": "state update",
+        "parameters": [
+          {
+            "name": "state_id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Measurement"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "States"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "state delete",
+        "description": "state delete",
+        "parameters": [
+          {
+            "name": "state_id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      }
+    },
+    "/warehouses": {
+      "get": {
+        "tags": [
+          "warehouses"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "warehouses get all",
+        "description": "warehouses get all",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "warehouses"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "warehouses store",
+        "description": "warehouses store",
+        "consumes": [
+          "application/json",
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json",
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Warehouse"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      }
+    },
+    "/warehouses/{warehouse_id}": {
+      "get": {
+        "tags": [
+          "warehouses"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "warehouse show",
+        "description": "warehouse show",
+        "parameters": [
+          {
+            "name": "warehouse_id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "warehouses"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "warehouse update",
+        "description": "warehouse update",
+        "parameters": [
+          {
+            "name": "warehouse_id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Measurement"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "warehouses"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "warehouse delete",
+        "description": "warehouse delete",
+        "parameters": [
+          {
+            "name": "warehouse_id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      }
+    },
+    "/priority": {
+      "get": {
+        "tags": [
+          "Priority"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "Priority get all",
+        "description": "Priority get all",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Priority"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "Priority store",
+        "description": "Priority store",
+        "consumes": [
+          "application/json",
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json",
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Priority"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      }
+    },
+    "/priority/{priority_id}": {
+      "get": {
+        "tags": [
+          "Priority"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "Priority show",
+        "description": "Priority show",
+        "parameters": [
+          {
+            "name": "priority_id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Priority"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "Priority update",
+        "description": "Priority update",
+        "parameters": [
+          {
+            "name": "priority_id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Measurement"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Priority"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "Priority delete",
+        "description": "Priority delete",
+        "parameters": [
+          {
+            "name": "priority_id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/categories": {
+      "get": {
+        "tags": [
+          "Category"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "Category get all",
+        "description": "Category get all",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Category"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "Category store",
+        "description": "Category store",
+        "consumes": [
+          "application/json",
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json",
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Category"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      }
+    },
+    "/categories/{category_id}": {
+      "get": {
+        "tags": [
+          "Category"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "Category show",
+        "description": "Category show",
+        "parameters": [
+          {
+            "name": "category_id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Category"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "Category update",
+        "description": "Category update",
+        "parameters": [
+          {
+            "name": "category_id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Category"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Category"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "Category delete",
+        "description": "Category delete",
+        "parameters": [
+          {
+            "name": "category_id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/levels": {
+      "get": {
+        "tags": [
+          "Level"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "Level get all",
+        "description": "Level get all",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Level"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "Level store",
+        "description": "Level store",
+        "consumes": [
+          "application/json",
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json",
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Level"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      }
+    },
+    "/levels/{level_id}": {
+      "get": {
+        "tags": [
+          "Level"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "Level show",
+        "description": "Level show",
+        "parameters": [
+          {
+            "name": "level_id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Level"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "Level update",
+        "description": "Level update",
+        "parameters": [
+          {
+            "name": "level_id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Level"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Level"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "Level delete",
+        "description": "Level delete",
+        "parameters": [
+          {
+            "name": "level_id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/levels/live/search": {
+      "post": {
+        "tags": [
+          "Level"
+        ],
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ],
+        "summary": "For levels all not pagination",
+        "parameters": [
+          {
+            "name": "search",
+            "in": "query",
+            "type": "string",
+            "description": "For search"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/ResponseSuccess"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ResponseError"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "bearer_auth": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    }
+  },
+  "definitions": {
+    "Login": {
+      "type": "object",
+      "required": [
+        "phone",
+        "password"
+      ],
+      "properties": {
+        "phone": {
+          "type": "string",
+          "example": "+998911836603"
+        },
+        "password": {
+          "type": "string",
+          "example": "admin"
+        }
+      }
+    },
+    "User": {
+      "type": "object",
+      "required": [
+        "phone",
+        "password"
+      ],
+      "properties": {
+        "phone": {
+          "type": "string",
+          "example": "+998911836603"
+        },
+        "password": {
+          "type": "string",
+          "example": "123456"
+        },
+        "name": {
+          "type": "string",
+          "example": "Azizbek Eshonaliyev"
+        },
+        "first_name": {
+          "type": "string",
+          "example": "Azizbek"
+        },
+        "last_name": {
+          "type": "string",
+          "example": "Eshonaliyev"
+        },
+        "patronymic": {
+          "type": "string",
+          "example": "Nurmamat o'g'li"
+        },
+        "role_id": {
+          "type": "integer",
+          "example": 1
+        },
+        "status": {
+          "type": "string",
+          "example": "active"
+        }
+      }
+    },
+    "Product": {
+      "type": "object",
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Test tovar"
+        },
+        "code": {
+          "type": "string",
+          "example": "00001"
+        },
+        "weight": {
+          "type": "string",
+          "example": 98909
+        },
+        "measurement_id": {
+          "type": "integer",
+          "example": 1
+        },
+        "status": {
+          "type": "string",
+          "example": "active"
+        },
+        "description": {
+          "type": "string",
+          "example": "Tovar o'zbekistonda ishlab chiqarilgan"
+        },
+        "minimum_price": {
+          "type": "number",
+          "example": 102000
+        },
+        "purchase_price": {
+          "type": "number",
+          "example": 10000
+        },
+        "selling_price": {
+          "type": "number",
+          "example": 12000
+        },
+        "materials": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "material_id": {
+                "type": "integer",
+                "example": 1
+              },
+              "quantity": {
+                "type": "number",
+                "example": 4
+              }
+            }
+          }
+        }
+      }
+    },
+    "Measurement": {
+      "type": "object",
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Kg"
+        },
+        "status": {
+          "type": "string",
+          "example": "active"
+        }
+      }
+    },
+    "Sale": {
+      "properties": {
+        "client_id": {
+          "type": "integer",
+          "example": 1
+        },
+        "total_amount": {
+          "type": "number",
+          "example": 400000
+        },
+        "begin_date": {
+          "type": "string",
+          "example": "2019/07/25"
+        },
+        "end_date": {
+          "type": "string",
+          "example": "2019/07/30"
+        },
+        "payed_sum": {
+          "type": "number",
+          "example": 200000
+        },
+        "debit": {
+          "type": "number",
+          "example": 200000
+        },
+        "priority": {
+          "type": "string",
+          "example": "first"
+        },
+        "state_id": {
+          "type": "integer",
+          "example": 1
+        },
+        "warehouse_id": {
+          "type": "integer",
+          "example": 1
+        }
+      }
+    },
+    "State": {
+      "properties": {
+        "state": {
+          "type": "string",
+          "example": "waiting"
+        },
+        "status": {
+          "type": "string",
+          "example": "Ожидание"
+        }
+      }
+    },
+    "Warehouse": {
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "СКЛАД СЫРЬЯ"
+        },
+        "type": {
+          "type": "string",
+          "example": "product"
+        }
+      }
+    },
+    "Priority": {
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Yangi"
+        }
+      }
+    },
+    "SaleProduct": {
+      "properties": {
+        "product_id": {
+          "type": "integer",
+          "example": 1
+        },
+        "quantity": {
+          "type": "number",
+          "example": 5
+        }
+      }
+    },
+    "Category": {
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Oyoq kiyimlar"
+        },
+        "parent_id": {
+          "type": "number",
+          "example": 1
+        }
+      }
+    },
+    "Level": {
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Oyoq kiyimlar"
+        },
+        "right": {
+          "type": "number",
+          "example": 1
+        },
+        "left": {
+          "type": "number",
+          "example": 1
+        }
+      }
+    },
+    "ResponseError": {
+      "required": [
+        "result",
+        "error"
+      ],
+      "properties": {
+        "result": {
+          "type": "object",
+          "properties": {
+            "sucess": {
+              "type": "boolean",
+              "example": false
+            },
+            "data": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              },
+              "example": []
+            }
+          }
+        },
+        "error": {
+          "type": "object",
+          "properties": {
+            "message": {
+              "type": "string"
+            },
+            "code": {
+              "type": "integer",
+              "example": "400 or 401"
+            }
+          }
+        }
+      }
+    },
+    "ResponseErrorValidation": {
+      "required": [
+        "result",
+        "error"
+      ],
+      "properties": {
+        "result": {
+          "type": "object",
+          "properties": {
+            "sucess": {
+              "type": "boolean",
+              "example": false
+            },
+            "data": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              },
+              "example": []
+            }
+          }
+        },
+        "error": {
+          "type": "object",
+          "properties": {
+            "message": {
+              "type": "string"
+            },
+            "code": {
+              "type": "integer",
+              "example": 422
+            }
+          }
+        },
+        "validation_errors": {
+          "type": "object",
+          "example": {
+            "name": [
+              "The name field is required."
+            ],
+            "phone": [
+              "The phone field is required.",
+              "The phone field already exists"
+            ]
+          }
+        }
+      }
+    },
+    "ResponseSuccess": {
+      "required": [
+        "result"
+      ],
+      "properties": {
+        "result": {
+          "type": "object",
+          "properties": {
+            "sucess": {
+              "type": "boolean",
+              "example": true
+            },
+            "data": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              },
+              "example": {
+                "data": []
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

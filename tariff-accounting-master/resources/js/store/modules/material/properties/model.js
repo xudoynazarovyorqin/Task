@@ -1,0 +1,17 @@
+export const model = {
+    id: null,
+    name: '',
+    sku: '',
+    code: '',
+    price: 0,
+    price_currency: null,
+    critical_weight: '',
+    measurement: '',
+    country: '',
+    is_active: '',
+    warehouse_type: '',
+    is_reworking: '',
+    measurement_changeable: false,
+    additional_measurement: '',
+    additional_measurement_rate: 1,
+};

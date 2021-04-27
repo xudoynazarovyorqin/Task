@@ -1,0 +1,21 @@
+export const filter = {
+    id: "",
+    search: "",
+    name: '',
+    full_name: '',
+    balance: '',
+    sku: '',
+    phone: '',
+    email: '',
+    comment: '',
+    actual_address: '',
+    type_id: '',
+    legal_address: '',
+    inn: '',
+    mfo: '',
+    okonx: '',
+    oked: '',
+    rkp_nds: '',
+    created_at: '',
+    updated_at: ''
+};
