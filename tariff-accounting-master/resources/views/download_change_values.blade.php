@@ -1,1 +1,0 @@
-{{ $audit->old_values }}
